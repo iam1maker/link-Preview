@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "1maker-preview",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "link preview!!!!!!!!!!",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
