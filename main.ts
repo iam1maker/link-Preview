@@ -25,7 +25,7 @@ export default class makerPlugin extends Plugin {
 			id: "peek",
 			name: "peek into the dark",
 			checkCallback: (checking) => {
-				const pastDark = new Date().getHours() >= 23;
+				const pastDark = new Date().getHours() <= 23;
 				if (pastDark) {
 					if (!checking) {
 						new Notice("It's too late to peek!");
@@ -33,6 +33,16 @@ export default class makerPlugin extends Plugin {
 					return true;
 				}
 				return false;
+			},
+		});
+
+		this.addCommand({
+			id: "decorate",
+			name: "Decorate",
+			editorCallback: (editor,view) => {
+				const value = editor.getValue().replace(/^\#(.*)$/gm,(match)=>match+"🎃");
+				editor.setValue(value);
+				console.log(value);
 			},
 		});
 	}
